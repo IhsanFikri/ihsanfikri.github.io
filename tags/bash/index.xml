@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Ihsan F. A. Muharram</title>
-    <link>https://ihsan.thedev.id/</link>
-    <description>Recent content on Ihsan F. A. Muharram</description>
+    <title>bash on Ihsan F. A. Muharram</title>
+    <link>https://ihsan.thedev.id/tags/bash/</link>
+    <description>Recent content in bash on Ihsan F. A. Muharram</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Wed, 04 Jan 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://ihsan.thedev.id/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 04 Jan 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://ihsan.thedev.id/tags/bash/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Bash Cheat sheet</title>
       <link>https://ihsan.thedev.id/posts/2023/01/bash-cheat-sheet/</link>
