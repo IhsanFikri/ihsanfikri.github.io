@@ -6,7 +6,18 @@
     <description>Recent content on Ihsan F. A. Muharram</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Wed, 04 Jan 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://ihsan.thedev.id/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 26 Jan 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://ihsan.thedev.id/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Expanding Swap Space on Linux</title>
+      <link>https://ihsan.thedev.id/posts/2023/01/expanding-swap-space-on-linux/</link>
+      <pubDate>Thu, 26 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ihsan.thedev.id/posts/2023/01/expanding-swap-space-on-linux/</guid>
+      <description>On a Linux system, swap space is used as a virtual memory extension when the system&amp;rsquo;s physical RAM (Random Access Memory) is fully utilized. When your computer runs out of physical memory because of the applications and processes you&amp;rsquo;re running, the operating system moves data from the RAM to an area of the hard drive or SSD called swap space
+Check the Current Swap Space
+free -m or swapon -s or htop</description>
+    </item>
+    
     <item>
       <title>Bash Cheat sheet</title>
       <link>https://ihsan.thedev.id/posts/2023/01/bash-cheat-sheet/</link>

@@ -5,8 +5,55 @@
         <description>Recent content in Posts on Ihsan F. A. Muharram</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-US</language>
-        <lastBuildDate>Wed, 04 Jan 2023 00:00:00 +0000</lastBuildDate>
+        <lastBuildDate>Thu, 26 Jan 2023 00:00:00 +0000</lastBuildDate>
         <atom:link href="https://ihsan.thedev.id/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>Expanding Swap Space on Linux</title>
+            <link>https://ihsan.thedev.id/posts/2023/01/expanding-swap-space-on-linux/</link>
+            <pubDate>Thu, 26 Jan 2023 00:00:00 +0000</pubDate>
+            
+            <guid>https://ihsan.thedev.id/posts/2023/01/expanding-swap-space-on-linux/</guid>
+            <description>On a Linux system, swap space is used as a virtual memory extension when the system&amp;rsquo;s physical RAM (Random Access Memory) is fully utilized. When your computer runs out of physical memory because of the applications and processes you&amp;rsquo;re running, the operating system moves data from the RAM to an area of the hard drive or SSD called swap space
+Check the Current Swap Space
+free -m or swapon -s or htop</description>
+            <content type="html"><![CDATA[<p><img src="https://cdn.dribbble.com/users/2965683/screenshots/7161445/media/0800209a26fcb568edd57dce98b43c71.jpg" alt="linux2">
+On a Linux system, swap space is used as a virtual memory extension when the system&rsquo;s physical RAM (Random Access Memory) is fully utilized. When your computer runs out of physical memory because of the applications and processes you&rsquo;re running, the operating system moves data from the RAM to an area of the hard drive or SSD called swap space</p>
+<ol>
+<li>
+<p><strong>Check the Current Swap Space</strong></p>
+<p><code>free -m</code> or <code>swapon -s</code> or <code>htop</code></p>
+</li>
+<li>
+<p><strong>Create Swap File of size 1GB</strong></p>
+<p><code># dd if=/dev/zero of=/swap_file bs=1G count=1</code></p>
+<p>Replace the value of <strong>‘bs‘</strong> and <strong>‘count‘</strong> according your requirement.
+We can also use fallocate command to create a file, example is show below.</p>
+<p><code>#fallocate -l 1G /swap_file</code></p>
+</li>
+<li>
+<p><strong>Secure the swap file</strong></p>
+<p><code># chmod 600 /swap_file</code></p>
+</li>
+<li>
+<p><strong>Enable the Swap Area on Swap File</strong></p>
+<p><code>mkswap /swap_file</code></p>
+</li>
+<li>
+<p><strong>Add the swap file entry in fstab file</strong></p>
+<p><code>echo &quot;swap_file  swap   swap   defaults   0 0&quot; &gt;&gt; /etc/fstab</code></p>
+</li>
+<li>
+<p><strong>Extend Swap Space</strong></p>
+<p><code>swapon /swap_file</code></p>
+</li>
+<li>
+<p><strong>Now verify the swap space</strong></p>
+<p><code>free -m</code> or <code>swapon -s</code> or <code>htop</code></p>
+</li>
+</ol>
+]]></content>
+        </item>
         
         <item>
             <title>Bash Cheat sheet</title>
@@ -24,25 +71,25 @@ Basic Commands: pwd: Untuk mengetahui posisi direktori saat ini (Current Working
 <hr>
 <h3 id="basic-commands"><strong>Basic Commands</strong>:</h3>
 <ul>
-<li><strong><code>pwd</code></strong>: Untuk mengetahui <em>posisi direktori</em> saat ini (Current Working Directory)</li>
-<li><strong><code>cd</code></strong>: Untuk <em>berpindah</em> ke direktori lain</li>
-<li><strong><code>ls</code></strong>: Untuk <em>listing</em> pada direktori saat ini</li>
-<li><strong><code>mkdir</code></strong>: Untuk <em>membuat direktori</em> baru</li>
-<li><strong><code>touch</code></strong>: Untuk <em>mebuat file</em> baru</li>
-<li><strong><code>mv</code></strong>: Untuk <em>merubah</em> nama file / direktori ataupun memindahkan file / direktori</li>
-<li><strong><code>cp</code></strong>: Untuk <em>mengduplikasi</em> file / direktori</li>
-<li><strong><code>rm</code></strong>: Untuk <em>menghapus</em> file / direktori</li>
+<li><strong><code>pwd</code></strong>: Untuk mengetahui <strong>posisi direktori</strong> saat ini (Current Working Directory)</li>
+<li><strong><code>cd</code></strong>: Untuk <strong>berpindah</strong> ke direktori lain</li>
+<li><strong><code>ls</code></strong>: Untuk <strong>listing</strong> pada direktori saat ini</li>
+<li><strong><code>mkdir</code></strong>: Untuk <strong>membuat direktori</strong> baru</li>
+<li><strong><code>touch</code></strong>: Untuk <strong>mebuat file</strong> baru</li>
+<li><strong><code>mv</code></strong>: Untuk <strong>merubah</strong> nama file / direktori ataupun memindahkan file / direktori</li>
+<li><strong><code>cp</code></strong>: Untuk <strong>mengduplikasi</strong> file / direktori</li>
+<li><strong><code>rm</code></strong>: Untuk <strong>menghapus</strong> file / direktori</li>
 </ul>
 <h3 id="file-permissions"><strong>File permissions:</strong></h3>
 <ul>
-<li><strong><code>chmod</code></strong>: Untuk merubah permission pada filie / direktori</li>
-<li><strong><code>chown</code></strong>: Untuk merubah kepemilikan (owner) pada file /direktori</li>
+<li><strong><code>chmod</code></strong>: Untuk <strong>merubah permission</strong> pada filie / direktori</li>
+<li><strong><code>chown</code></strong>: Untuk <strong>merubah kepemilikan</strong> (owner) pada file /direktori</li>
 </ul>
 <h3 id="command-history"><strong>Command history:</strong></h3>
 <ul>
-<li><strong><code>history</code></strong>: Untuk melihat histori perintah</li>
+<li><strong><code>history</code></strong>: Untuk <strong>melihat histori</strong> perintah</li>
 <li><strong><code>!!</code></strong>: Menjalankan perintah terakhir yang dijalankan</li>
-<li><strong><code>!&lt;number&gt;</code></strong>: Menjalankan perintah pada index yang tertera pada histori</li>
+<li><strong><code>!&lt;number&gt;</code></strong>: <strong>Menjalankan perintah pada index</strong> yang tertera pada histori</li>
 </ul>
 <h3 id="text-processing"><strong>Text processing:</strong></h3>
 <ul>
