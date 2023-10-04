@@ -8,11 +8,11 @@
     <language>en-US</language>
     <lastBuildDate>Wed, 04 Jan 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://ihsan.thedev.id/tags/bash/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Bash Cheat sheet</title>
-      <link>https://ihsan.thedev.id/posts/2023/01/bash-cheat-sheet/</link>
+      <title>Bash Cheat sheet [id]</title>
+      <link>https://ihsan.thedev.id/posts/2023/01/bash-cheat-sheet-id/</link>
       <pubDate>Wed, 04 Jan 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://ihsan.thedev.id/posts/2023/01/bash-cheat-sheet/</guid>
+      <guid>https://ihsan.thedev.id/posts/2023/01/bash-cheat-sheet-id/</guid>
       <description>Bash (The Bourne-Again Shell) adalah command-line interpreter atau shell yang digunakan untuk komunikasi dengan system operasi. Bash merupakan shell terpopuler pada Distribusi Linux, dan juga digunakan pada macOS.
 Basic Commands: pwd: Untuk mengetahui posisi direktori saat ini (Current Working Directory) cd: Untuk berpindah ke direktori lain ls: Untuk listing pada direktori saat ini mkdir: Untuk membuat direktori baru touch: Untuk mebuat file baru mv: Untuk merubah nama file / direktori ataupun memindahkan file / direktori cp: Untuk mengduplikasi file / direktori rm: Untuk menghapus file / direktori File permissions: chmod: Untuk merubah permission pada filie / direktori chown: Untuk merubah kepemilikan (owner) pada file /direktori Command history: history: Untuk melihat histori perintah !</description>
     </item>
