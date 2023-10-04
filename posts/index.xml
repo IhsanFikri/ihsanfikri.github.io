@@ -5,8 +5,109 @@
         <description>Recent content in Posts on Ihsan F. A. Muharram</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-US</language>
-        <lastBuildDate>Thu, 26 Jan 2023 00:00:00 +0000</lastBuildDate>
+        <lastBuildDate>Thu, 02 Feb 2023 00:00:00 +0000</lastBuildDate>
         <atom:link href="https://ihsan.thedev.id/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>Expanding Partition on Linux</title>
+            <link>https://ihsan.thedev.id/posts/2023/02/expanding-partition-on-linux/</link>
+            <pubDate>Thu, 02 Feb 2023 00:00:00 +0000</pubDate>
+            
+            <guid>https://ihsan.thedev.id/posts/2023/02/expanding-partition-on-linux/</guid>
+            <description>Expanding a partition on Linux (Virtualization) typically involves a few steps. Here&amp;rsquo;s a guide on how to do it using the parted utility. Before proceeding, make sure you have backups of important data, as resizing partitions carries some risk.
+For LVM Rescan Disk without restart machine
+sudo echo 1&amp;gt;/sys/class/block/sda/device/rescan Check Disk space after expanding partition on same disk
+sudo fdisk -l #used for list all disk if there are red text on the list, just type w for rewrite block, there are no affected to file inside partition.</description>
+            <content type="html"><![CDATA[<!-- raw HTML omitted -->
+<p><img src="https://cdn.dribbble.com/users/2965683/screenshots/7161445/media/0800209a26fcb568edd57dce98b43c71.jpg" alt="linux2"></p>
+<p>Expanding a partition on Linux (Virtualization) typically involves a few steps. Here&rsquo;s a guide on how to do it using the parted utility. Before proceeding, make sure you have backups of important data, as resizing partitions carries some risk.</p>
+<h2 id="for-lvm">For LVM</h2>
+<ol>
+<li>
+<p><strong>Rescan Disk without restart machine</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo echo 1&gt;/sys/class/block/sda/device/rescan
+</span></span></code></pre></div></li>
+<li>
+<p><strong>Check Disk space after expanding partition on same disk</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo fdisk -l <span style="color:#75715e">#used for list all disk</span>
+</span></span></code></pre></div><p>if there are red text on the list, just type <code>w</code> for rewrite block, there are no affected to file inside partition.</p>
+</li>
+<li>
+<p><strong>Use parted to Resize Partitions</strong></p>
+<ul>
+<li>
+<p><strong>Check Partition Layout</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo parted /dev/sdX print
+</span></span></code></pre></div><p>Replace <em><strong>/dev/sdX</strong></em> with the appropriate device name for your disk (for example, <em><strong>/dev/sda</strong></em>).</p>
+</li>
+<li>
+<p><strong>Resize the Partition</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo parted resizepart X 100% 
+</span></span></code></pre></div><p>this command resizes partition <strong>X</strong> (we can just change <strong>X</strong> with partition number ex: 1 or 2 etc) to use 100% of the available space.</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Check   Physical Volume Status (PVS) on LVM</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>    sudo pvs
+</span></span></code></pre></div></li>
+<li>
+<p><strong>Resize the Physical Volume</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>    sudo pvresize /dev/sdXY
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    sudo pvdisplay /dev/sdXY
+</span></span></code></pre></div><p>this first command used for resize the physical volume and the second one used for show PV data size</p>
+<p>Replace <em><strong>/dev/sdXY</strong></em> with the appropriate device name for your disk (for example, <em><strong>/dev/sda3</strong></em>).</p>
+</li>
+<li>
+<p><strong>Check Logical Volume Status (LVS)</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>    sudo lvs
+</span></span></code></pre></div></li>
+<li>
+<p><strong>Expand the Logical Volume</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>    sudo  lvresize -l +100%FREE /dev/mapper/ubuntu--vg-ubuntu--lv
+</span></span></code></pre></div><p>Replace <em><strong>/dev/mapper/ubuntu&ndash;vg-ubuntu&ndash;lv</strong></em> with your LVM name.</p>
+</li>
+<li>
+<p><strong>Resize the the volume</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>    sudo resize2fs /dev/mapper/ubuntu--vg-ubuntu--lv
+</span></span></code></pre></div><p>Replace <em><strong>/dev/mapper/ubuntu&ndash;vg-ubuntu&ndash;lv</strong></em> with your LVM name.</p>
+</li>
+</ol>
+<h2 id="for-dedicated-mounted-drive">For Dedicated Mounted Drive</h2>
+<ol>
+<li>
+<p><strong>Rescan Disk without restart machine</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo echo 1&gt;/sys/class/block/sda/device/rescan
+</span></span></code></pre></div></li>
+<li>
+<p><strong>Check Disk space after expanding partition on same disk</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo fdisk -l <span style="color:#75715e">#used for list all disk</span>
+</span></span></code></pre></div><p>if there are red text on the list, just type <code>w</code> for rewrite block, there are no affected to file inside partition.</p>
+</li>
+<li>
+<p><strong>Use parted to Resize Partitions</strong></p>
+<ul>
+<li>
+<p><strong>Check Partition Layout</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo parted /dev/sdX print
+</span></span></code></pre></div><p>Replace <em><strong>/dev/sdX</strong></em> with the appropriate device name for your disk (for example, <em><strong>/dev/sda</strong></em>).</p>
+</li>
+<li>
+<p><strong>Resize the Partition</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo parted resizepart X 100% 
+</span></span></code></pre></div><p>this command resizes partition <strong>X</strong> (we can just change <strong>X</strong> with partition number ex: 1 or 2 etc) to use 100% of the available space.</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Resize the the volume</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>    sudo resize2fs /dev/sdXY
+</span></span></code></pre></div><p>Replace <em><strong>/dev/sdXY</strong></em> with your LVM name.</p>
+</li>
+</ol>
+]]></content>
+        </item>
         
         <item>
             <title>Expanding Swap Space on Linux</title>
