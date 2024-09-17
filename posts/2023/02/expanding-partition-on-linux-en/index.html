@@ -6,8 +6,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="author" content="Ihsan Muharram ">
 <meta name="description" content="Expanding a partition on Linux (Virtualization) typically involves a few steps. Here&amp;rsquo;s a guide on how to do it using the parted utility. Before proceeding, make sure you have backups of important data, as resizing partitions carries some risk.
-For LVM Rescan Disk without restart machine
-sudo echo 1&amp;gt;/sys/class/block/sda/device/rescan Check Disk space after expanding partition on same disk
+For LVM   Rescan Disk without restart machine
+sudo echo 1&amp;gt;/sys/class/block/sda/device/rescan   Check Disk space after expanding partition on same disk
 sudo fdisk -l #used for list all disk if there are red text on the list, just type w for rewrite block, there are no affected to file inside partition." />
 <meta name="keywords" content=", expanding, harddrive" />
 <meta name="robots" content="noodp" />
@@ -46,8 +46,8 @@ sudo fdisk -l #used for list all disk if there are red text on the list, just ty
 
 <meta itemprop="name" content="Expanding Partition on Linux [en]">
 <meta itemprop="description" content="Expanding a partition on Linux (Virtualization) typically involves a few steps. Here&rsquo;s a guide on how to do it using the parted utility. Before proceeding, make sure you have backups of important data, as resizing partitions carries some risk.
-For LVM Rescan Disk without restart machine
-sudo echo 1&gt;/sys/class/block/sda/device/rescan Check Disk space after expanding partition on same disk
+For LVM   Rescan Disk without restart machine
+sudo echo 1&gt;/sys/class/block/sda/device/rescan   Check Disk space after expanding partition on same disk
 sudo fdisk -l #used for list all disk if there are red text on the list, just type w for rewrite block, there are no affected to file inside partition."><meta itemprop="datePublished" content="2023-02-02T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2023-02-02T00:00:00+00:00" />
 <meta itemprop="wordCount" content="354"><meta itemprop="image" content="https://ihsan.thedev.id/"/>
@@ -57,21 +57,22 @@ sudo fdisk -l #used for list all disk if there are red text on the list, just ty
 
 <meta name="twitter:title" content="Expanding Partition on Linux [en]"/>
 <meta name="twitter:description" content="Expanding a partition on Linux (Virtualization) typically involves a few steps. Here&rsquo;s a guide on how to do it using the parted utility. Before proceeding, make sure you have backups of important data, as resizing partitions carries some risk.
-For LVM Rescan Disk without restart machine
-sudo echo 1&gt;/sys/class/block/sda/device/rescan Check Disk space after expanding partition on same disk
+For LVM   Rescan Disk without restart machine
+sudo echo 1&gt;/sys/class/block/sda/device/rescan   Check Disk space after expanding partition on same disk
 sudo fdisk -l #used for list all disk if there are red text on the list, just type w for rewrite block, there are no affected to file inside partition."/>
 
 
 
     <meta property="og:title" content="Expanding Partition on Linux [en]" />
 <meta property="og:description" content="Expanding a partition on Linux (Virtualization) typically involves a few steps. Here&rsquo;s a guide on how to do it using the parted utility. Before proceeding, make sure you have backups of important data, as resizing partitions carries some risk.
-For LVM Rescan Disk without restart machine
-sudo echo 1&gt;/sys/class/block/sda/device/rescan Check Disk space after expanding partition on same disk
+For LVM   Rescan Disk without restart machine
+sudo echo 1&gt;/sys/class/block/sda/device/rescan   Check Disk space after expanding partition on same disk
 sudo fdisk -l #used for list all disk if there are red text on the list, just type w for rewrite block, there are no affected to file inside partition." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://ihsan.thedev.id/posts/2023/02/expanding-partition-on-linux-en/" /><meta property="og:image" content="https://ihsan.thedev.id/"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2023-02-02T00:00:00+00:00" />
 <meta property="article:modified_time" content="2023-02-02T00:00:00+00:00" />
+
 
 
 
@@ -172,85 +173,85 @@ sudo fdisk -l #used for list all disk if there are red text on the list, just ty
 <ol>
 <li>
 <p><strong>Rescan Disk without restart machine</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo echo 1&gt;/sys/class/block/sda/device/rescan
-</span></span></code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo echo 1&gt;/sys/class/block/sda/device/rescan
+</code></pre></div></li>
 <li>
 <p><strong>Check Disk space after expanding partition on same disk</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo fdisk -l <span style="color:#75715e">#used for list all disk</span>
-</span></span></code></pre></div><p>if there are red text on the list, just type <code>w</code> for rewrite block, there are no affected to file inside partition.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo fdisk -l <span style="color:#75715e">#used for list all disk</span>
+</code></pre></div><p>if there are red text on the list, just type <code>w</code> for rewrite block, there are no affected to file inside partition.</p>
 </li>
 <li>
 <p><strong>Use parted to Resize Partitions</strong></p>
 <ul>
 <li>
 <p><strong>Check Partition Layout</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo parted /dev/sdX print
-</span></span></code></pre></div><p>Replace <em><strong>/dev/sdX</strong></em> with the appropriate device name for your disk (for example, <em><strong>/dev/sda</strong></em>).</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo parted /dev/sdX print
+</code></pre></div><p>Replace <em><strong>/dev/sdX</strong></em> with the appropriate device name for your disk (for example, <em><strong>/dev/sda</strong></em>).</p>
 </li>
 <li>
 <p><strong>Resize the Partition</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo parted resizepart X 100% 
-</span></span></code></pre></div><p>this command resizes partition <strong>X</strong> (we can just change <strong>X</strong> with partition number ex: 1 or 2 etc) to use 100% of the available space.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo parted resizepart X 100% 
+</code></pre></div><p>this command resizes partition <strong>X</strong> (we can just change <strong>X</strong> with partition number ex: 1 or 2 etc) to use 100% of the available space.</p>
 </li>
 </ul>
 </li>
 <li>
 <p><strong>Check   Physical Volume Status (PVS) on LVM</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>    sudo pvs
-</span></span></code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">    sudo pvs
+</code></pre></div></li>
 <li>
 <p><strong>Resize the Physical Volume</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>    sudo pvresize /dev/sdXY
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    sudo pvdisplay /dev/sdXY
-</span></span></code></pre></div><p>this first command used for resize the physical volume and the second one used for show PV data size</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">    sudo pvresize /dev/sdXY
+
+    sudo pvdisplay /dev/sdXY
+</code></pre></div><p>this first command used for resize the physical volume and the second one used for show PV data size</p>
 <p>Replace <em><strong>/dev/sdXY</strong></em> with the appropriate device name for your disk (for example, <em><strong>/dev/sda3</strong></em>).</p>
 </li>
 <li>
 <p><strong>Check Logical Volume Status (LVS)</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>    sudo lvs
-</span></span></code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">    sudo lvs
+</code></pre></div></li>
 <li>
 <p><strong>Expand the Logical Volume</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>    sudo  lvresize -l +100%FREE /dev/mapper/ubuntu--vg-ubuntu--lv
-</span></span></code></pre></div><p>Replace <em><strong>/dev/mapper/ubuntu&ndash;vg-ubuntu&ndash;lv</strong></em> with your LVM name.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">    sudo  lvresize -l +100%FREE /dev/mapper/ubuntu--vg-ubuntu--lv
+</code></pre></div><p>Replace <em><strong>/dev/mapper/ubuntu&ndash;vg-ubuntu&ndash;lv</strong></em> with your LVM name.</p>
 </li>
 <li>
 <p><strong>Resize the the volume</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>    sudo resize2fs /dev/mapper/ubuntu--vg-ubuntu--lv
-</span></span></code></pre></div><p>Replace <em><strong>/dev/mapper/ubuntu&ndash;vg-ubuntu&ndash;lv</strong></em> with your LVM name.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">    sudo resize2fs /dev/mapper/ubuntu--vg-ubuntu--lv
+</code></pre></div><p>Replace <em><strong>/dev/mapper/ubuntu&ndash;vg-ubuntu&ndash;lv</strong></em> with your LVM name.</p>
 </li>
 </ol>
 <h2 id="for-dedicated-mounted-drive">For Dedicated Mounted Drive</h2>
 <ol>
 <li>
 <p><strong>Rescan Disk without restart machine</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo echo 1&gt;/sys/class/block/sda/device/rescan
-</span></span></code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo echo 1&gt;/sys/class/block/sda/device/rescan
+</code></pre></div></li>
 <li>
 <p><strong>Check Disk space after expanding partition on same disk</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo fdisk -l <span style="color:#75715e">#used for list all disk</span>
-</span></span></code></pre></div><p>if there are red text on the list, just type <code>w</code> for rewrite block, there are no affected to file inside partition.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo fdisk -l <span style="color:#75715e">#used for list all disk</span>
+</code></pre></div><p>if there are red text on the list, just type <code>w</code> for rewrite block, there are no affected to file inside partition.</p>
 </li>
 <li>
 <p><strong>Use parted to Resize Partitions</strong></p>
 <ul>
 <li>
 <p><strong>Check Partition Layout</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo parted /dev/sdX print
-</span></span></code></pre></div><p>Replace <em><strong>/dev/sdX</strong></em> with the appropriate device name for your disk (for example, <em><strong>/dev/sda</strong></em>).</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo parted /dev/sdX print
+</code></pre></div><p>Replace <em><strong>/dev/sdX</strong></em> with the appropriate device name for your disk (for example, <em><strong>/dev/sda</strong></em>).</p>
 </li>
 <li>
 <p><strong>Resize the Partition</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo parted resizepart X 100% 
-</span></span></code></pre></div><p>this command resizes partition <strong>X</strong> (we can just change <strong>X</strong> with partition number ex: 1 or 2 etc) to use 100% of the available space.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo parted resizepart X 100% 
+</code></pre></div><p>this command resizes partition <strong>X</strong> (we can just change <strong>X</strong> with partition number ex: 1 or 2 etc) to use 100% of the available space.</p>
 </li>
 </ul>
 </li>
 <li>
 <p><strong>Resize the the volume</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>    sudo resize2fs /dev/sdXY
-</span></span></code></pre></div><p>Replace <em><strong>/dev/sdXY</strong></em> with your LVM name.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">    sudo resize2fs /dev/sdXY
+</code></pre></div><p>Replace <em><strong>/dev/sdXY</strong></em> with your LVM name.</p>
 </li>
 </ol>
 
@@ -290,7 +291,7 @@ sudo fdisk -l #used for list all disk if there are red text on the list, just ty
           <line x1="3" y1="10" x2="21" y2="10"></line>
         </svg>
         
-          2023-02-02 07:00 &#43;0700
+          2023-02-02 00:00 &#43;0000
         
 
          
@@ -449,7 +450,7 @@ sudo fdisk -l #used for list all disk if there are red text on the list, just ty
     
     <div class="footer__inner">
         <div class="footer__content">
-            <span>&copy; 2023</span>
+            <span>&copy; 2024</span>
             <span><a href="https://ihsan.thedev.id/">Ihsan Muharram</a></span>
             <span></span>
             <span><a href="https://ihsan.thedev.id/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
@@ -473,7 +474,7 @@ sudo fdisk -l #used for list all disk if there are red text on the list, just ty
 
 
 
-<script type="text/javascript" src="https://ihsan.thedev.id/bundle.min.bb2c6bc3ed452ca4759660e4020811f248bc2320081559e8a32d8b0092773852941133639d35e8370d03d3ddaa750b1edd6b343c5bd22a55d5bdeae8f648f49b.js" integrity="sha512-uyxrw&#43;1FLKR1lmDkAggR8ki8IyAIFVnooy2LAJJ3OFKUETNjnTXoNw0D092qdQse3Ws0PFvSKlXVvero9kj0mw=="></script>
+<script type="text/javascript" src="https://ihsan.thedev.id/bundle.min.599099f1f14b78b657d524b28e10e0c5098e7cd46e9c7aed73d577068a276c3ff1bb234cbf29cb313333e83cf411727b43157c91ce5b809e2ffc81664614608e.js" integrity="sha512-WZCZ8fFLeLZX1SSyjhDgxQmOfNRunHrtc9V3BoonbD/xuyNMvynLMTMz6Dz0EXJ7QxV8kc5bgJ4v/IFmRhRgjg=="></script>
 
 
 

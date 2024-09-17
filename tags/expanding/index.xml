@@ -14,8 +14,8 @@
       
       <guid>https://ihsan.thedev.id/posts/2023/02/expanding-partition-on-linux-en/</guid>
       <description>Expanding a partition on Linux (Virtualization) typically involves a few steps. Here&amp;rsquo;s a guide on how to do it using the parted utility. Before proceeding, make sure you have backups of important data, as resizing partitions carries some risk.
-For LVM Rescan Disk without restart machine
-sudo echo 1&amp;gt;/sys/class/block/sda/device/rescan Check Disk space after expanding partition on same disk
+For LVM   Rescan Disk without restart machine
+sudo echo 1&amp;gt;/sys/class/block/sda/device/rescan   Check Disk space after expanding partition on same disk
 sudo fdisk -l #used for list all disk if there are red text on the list, just type w for rewrite block, there are no affected to file inside partition.</description>
     </item>
     
@@ -26,7 +26,7 @@ sudo fdisk -l #used for list all disk if there are red text on the list, just ty
       
       <guid>https://ihsan.thedev.id/posts/2023/01/expanding-swap-space-on-linux-en/</guid>
       <description>On a Linux system, swap space is used as a virtual memory extension when the system&amp;rsquo;s physical RAM (Random Access Memory) is fully utilized. When your computer runs out of physical memory because of the applications and processes you&amp;rsquo;re running, the operating system moves data from the RAM to an area of the hard drive or SSD called swap space
-Check the Current Swap Space
+  Check the Current Swap Space
 free -m or swapon -s or htop</description>
     </item>
     

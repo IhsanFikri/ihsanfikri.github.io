@@ -70,7 +70,8 @@ Jadi Arcade ini merupakan sebuah aplikasi untuk membuat video demo secara intera
 
 
 
-    <meta property="article:published_time" content="2023-02-03 07:30:50 &#43;0700 &#43;07" />
+
+    <meta property="article:published_time" content="2023-02-03 07:30:50 &#43;0700 &#43;0700" />
 
 
 
@@ -195,32 +196,33 @@ Terdapat beberapa cara untuk menambahkan HTML script embed pada hugo page salah 
 
 
 <p>lalu pilih <em><strong>copy code</strong></em> pada bagian website, didapatkan code berikut</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;position: relative; padding-bottom: calc(56.88524590163935% + 41px); height: 0; width: 100%&#34;</span>&gt;
-</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">iframe</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://demo.arcade.software/&lt;YOUR_VIDEO_ID&gt;?embed&#34;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">frameborder</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0&#34;</span> 
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">loading</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;lazy&#34;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">webkitallowfullscreen</span> <span style="color:#a6e22e">mozallowfullscreen</span> <span style="color:#a6e22e">allowfullscreen</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%;color-scheme: light;&#34;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">title</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34; Sentry&#34;</span>&gt;
-</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">iframe</span>&gt;
-</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">div</span>&gt;
-</span></span></code></pre></div><p>code tersebut kita simpan pada <em>lokasi shortcodes</em> yang sebelumnya kita bahas, lalu kita lakukan perubahan pada bagian <code>src</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>    <span style="color:#75715e">&lt;!-- dari --&gt;</span>
-</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">iframe</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://demo.arcade.software/&lt;YOUR_VIDEO_ID&gt;?embed&#34;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">frameborder</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0&#34;</span> 
-</span></span><span style="display:flex;"><span>        <span style="color:#960050;background-color:#1e0010">...</span>
-</span></span><span style="display:flex;"><span>        &gt;
-</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">iframe</span>&gt;
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">&lt;!-- menjadi --&gt;</span>
-</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">iframe</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ .Get 0 }}&#34;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">frameborder</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0&#34;</span> 
-</span></span><span style="display:flex;"><span>        <span style="color:#960050;background-color:#1e0010">...</span>
-</span></span><span style="display:flex;"><span>        &gt;
-</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">iframe</span>&gt; 
-</span></span></code></pre></div><h3 id="contoh-embed-video-arcade">Contoh Embed video Arcade</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;position: relative; padding-bottom: calc(56.88524590163935% + 41px); height: 0; width: 100%&#34;</span>&gt;
+    &lt;<span style="color:#f92672">iframe</span>
+        <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://demo.arcade.software/&lt;YOUR_VIDEO_ID&gt;?embed&#34;</span>
+        <span style="color:#a6e22e">frameborder</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0&#34;</span> 
+        <span style="color:#a6e22e">loading</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;lazy&#34;</span>
+        <span style="color:#a6e22e">webkitallowfullscreen</span> <span style="color:#a6e22e">mozallowfullscreen</span> <span style="color:#a6e22e">allowfullscreen</span>
+        <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%;color-scheme: light;&#34;</span>
+        <span style="color:#a6e22e">title</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34; Sentry&#34;</span>&gt;
+    &lt;/<span style="color:#f92672">iframe</span>&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;
+
+</code></pre></div><p>code tersebut kita simpan pada <em>lokasi shortcodes</em> yang sebelumnya kita bahas, lalu kita lakukan perubahan pada bagian <code>src</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">    <span style="color:#75715e">&lt;!-- dari --&gt;</span>
+    &lt;<span style="color:#f92672">iframe</span>
+        <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://demo.arcade.software/&lt;YOUR_VIDEO_ID&gt;?embed&#34;</span>
+        <span style="color:#a6e22e">frameborder</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0&#34;</span> 
+        <span style="color:#960050;background-color:#1e0010">...</span>
+        &gt;
+    &lt;/<span style="color:#f92672">iframe</span>&gt;
+    <span style="color:#75715e">&lt;!-- menjadi --&gt;</span>
+    &lt;<span style="color:#f92672">iframe</span>
+        <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ .Get 0 }}&#34;</span>
+        <span style="color:#a6e22e">frameborder</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0&#34;</span> 
+        <span style="color:#960050;background-color:#1e0010">...</span>
+        &gt;
+    &lt;/<span style="color:#f92672">iframe</span>&gt; 
+</code></pre></div><h3 id="contoh-embed-video-arcade">Contoh Embed video Arcade</h3>
 <ul>
 <li><code>{{ &lt; arcade &quot;https://demo.arcade.software/0y1ULvJXzVZCF3QtTr0y?embed&quot; &gt;}}</code></li>
 </ul>
@@ -277,7 +279,7 @@ Terdapat beberapa cara untuk menambahkan HTML script embed pada hugo page salah 
           <line x1="3" y1="10" x2="21" y2="10"></line>
         </svg>
         
-          2023-02-03 07:30 &#43;0700
+          2023-02-03 00:30 &#43;0000
         
 
          
@@ -388,6 +390,13 @@ Terdapat beberapa cara untuk menambahkan HTML script embed pada hugo page salah 
 
         <div class="pagination__buttons">
             
+            <span class="button previous">
+                <a href="https://ihsan.thedev.id/posts/2024/09/how-to-log-all-bash-commands-by-all-user-on-linux-id/">
+                    <span class="button__icon">←</span>
+                    <span class="button__text">How to log all bash commands by all user on Linux [id]</span>
+                </a>
+            </span>
+            
 
             
             <span class="button next">
@@ -429,7 +438,7 @@ Terdapat beberapa cara untuk menambahkan HTML script embed pada hugo page salah 
     
     <div class="footer__inner">
         <div class="footer__content">
-            <span>&copy; 2023</span>
+            <span>&copy; 2024</span>
             <span><a href="https://ihsan.thedev.id/">Ihsan Muharram</a></span>
             <span></span>
             <span><a href="https://ihsan.thedev.id/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
@@ -453,7 +462,7 @@ Terdapat beberapa cara untuk menambahkan HTML script embed pada hugo page salah 
 
 
 
-<script type="text/javascript" src="https://ihsan.thedev.id/bundle.min.bb2c6bc3ed452ca4759660e4020811f248bc2320081559e8a32d8b0092773852941133639d35e8370d03d3ddaa750b1edd6b343c5bd22a55d5bdeae8f648f49b.js" integrity="sha512-uyxrw&#43;1FLKR1lmDkAggR8ki8IyAIFVnooy2LAJJ3OFKUETNjnTXoNw0D092qdQse3Ws0PFvSKlXVvero9kj0mw=="></script>
+<script type="text/javascript" src="https://ihsan.thedev.id/bundle.min.599099f1f14b78b657d524b28e10e0c5098e7cd46e9c7aed73d577068a276c3ff1bb234cbf29cb313333e83cf411727b43157c91ce5b809e2ffc81664614608e.js" integrity="sha512-WZCZ8fFLeLZX1SSyjhDgxQmOfNRunHrtc9V3BoonbD/xuyNMvynLMTMz6Dz0EXJ7QxV8kc5bgJ4v/IFmRhRgjg=="></script>
 
 
 
