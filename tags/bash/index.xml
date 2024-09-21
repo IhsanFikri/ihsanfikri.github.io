@@ -38,11 +38,11 @@ cat /etc/iscsi/initiatorname.iscsi akan tampil output seperti ini
     </item>
     
     <item>
-      <title>Restore LVM from Attached disk [id]</title>
-      <link>https://ihsan.thedev.id/posts/2024/09/restore-lvm-from-attached-disk-id/</link>
+      <title>Restore LVM from Attached disk [en]</title>
+      <link>https://ihsan.thedev.id/posts/2024/09/restore-lvm-from-attached-disk-en/</link>
       <pubDate>Thu, 19 Sep 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://ihsan.thedev.id/posts/2024/09/restore-lvm-from-attached-disk-id/</guid>
+      <guid>https://ihsan.thedev.id/posts/2024/09/restore-lvm-from-attached-disk-en/</guid>
       <description>1. Scan all new disk
 for host in /sys/class/scsi_host/*; do echo &amp;quot;- - -&amp;quot; | sudo tee $host/scan; ls /dev/sd* ; done 2. Check attached disk
  fdisk -l 3. heck phisical disk on lvm pvs
