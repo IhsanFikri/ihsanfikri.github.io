@@ -26,6 +26,20 @@
     </item>
     
     <item>
+      <title>postgres Delete PGwal</title>
+      <link>https://ihsan.thedev.id/notes/postgresdeletepgwal/</link>
+      <pubDate>Tue, 01 Oct 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://ihsan.thedev.id/notes/postgresdeletepgwal/</guid>
+      <description>matikan service postgres =&amp;gt; pg_ctlcluster 13 main stop  setting postgres
+  wal_level = minimal
+  archive_mode = off
+  comment archive_command =&amp;gt; #archive_command
+  hapus file di pg_archive =&amp;gt; masuk ke folder pg_archive jalankan perintah rm -rf *
+  hapus file di pg_wal 3 hari sebelum hari ini =&amp;gt; masuk ke folder pg_wal jalankan perintah find . -type f -mtime +3 -exec rm {} ;</description>
+    </item>
+    
+    <item>
       <title>watch storage every 3s</title>
       <link>https://ihsan.thedev.id/notes/watchstorageevery3s/</link>
       <pubDate>Tue, 01 Oct 2024 00:00:00 +0000</pubDate>
@@ -96,16 +110,6 @@ for host in /sys/class/scsi_host/*; do echo &amp;quot;- - -&amp;quot; | sudo tee
     Untuk BASH shell, edit pada system-wide runtime BASH config
 sudo vim /etc/bash.bashrc   Tambahkan perintah ini dibaigan paling bawah
 export PROMPT_COMMAND=&amp;#39;RETRN_VAL=$?;logger -p local6.debug &amp;#34;$(whoami) [$$]: $(history 1 | sed &amp;#34;s/^[ ]*[0-9]\+[ ]*//&amp;#34; )&amp;#34;&amp;#39;   Edit file /etc/rsyslog.</description>
-    </item>
-    
-    <item>
-      <title>Rangkuman Menjelajahi Analisis Data [id]</title>
-      <link>https://ihsan.thedev.id/notes/rangkuman_menjelajahi_analisis_data/</link>
-      <pubDate>Sun, 15 Sep 2024 00:00:00 +0000</pubDate>
-      
-      <guid>https://ihsan.thedev.id/notes/rangkuman_menjelajahi_analisis_data/</guid>
-      <description>Analisis data adalah proses menyelidiki, membersihkan, mengubah, dan memodelkan data dengan tujuan menemukan informasi yang berguna, menginformasikan kesimpulan, dan mendukung pengambilan keputusan, dan masih banyak lagi.
-Mengumpulkan Data Setelah mengajukan pertanyaan efektif menggunakan SMART Questions, yang harus Anda lakukan selanjutnya adalah mengumpulkan data. Data-data yang telah didapatkan baik dari kuesioner atau wawancara atau sumber lainnya, perlu dikumpulkan terlebih dahulu tujuannya adalah ketika Anda memerlukan data-data yang dibutuhkan untuk menjawab semua pertanyaan atau masalah bisnis yang akan dihadapi sudah siap.</description>
     </item>
     
   </channel>
